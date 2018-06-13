@@ -74,7 +74,9 @@ public class Configuracion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Creacion juego= new Creacion();
+        //Creacion juego= new Creacion();
+        TableroForm tab = new TableroForm();
+        tab.show();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

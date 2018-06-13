@@ -28,7 +28,7 @@ public class Creacion extends JFrame{
         int tam = tamMatriz();
         panel= new JPanel();
         bMatriz= new JLabel[tam][tam];
-        panel.setBounds(100,100,300,300);
+        panel.setBounds(100,100,400,400);
         int numr= (int)Math.random()*10;
         panel.setLayout(new GridLayout(tam,tam));
         for (int i = 0; i < tam; i++) {
