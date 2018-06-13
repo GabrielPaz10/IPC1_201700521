@@ -37,6 +37,7 @@ public class Tablero1 {
         vecLo[0][0]=1;
         personaje= new Mago();
         personaje.posMagoY=0;
+        personaje.posMagoX=0;
         for (int i =1; i < tam; i++) {
             for (int j = 0; j < tam; j++) {
                 vecLo[i][j]= 0;
