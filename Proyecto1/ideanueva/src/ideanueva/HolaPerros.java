@@ -35,7 +35,8 @@ public class HolaPerros extends JFrame {
      */
     public HolaPerros() {
         initComponents();
-        time.start();
+        //Cronometro tiempo= new Cronometro(this.tiempo);
+        //tiempo.disminuir(this.tiempo);
     }
     public Tablero tab;
     public boolean tabcreado= false;
