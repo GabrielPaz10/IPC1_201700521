@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 public class Barbaro1 {
     public int fuerza=2;
     public int pospery=0,posperx=0;
+    public Tablero tab;
     public ImageIcon obtenerImagen(int tamuy,int tamux){
         ImageIcon per= new ImageIcon(getClass().getResource("/imagenes/barbaro.png"));
         Image imagen = per.getImage();
@@ -27,6 +28,9 @@ public class Barbaro1 {
     }
     
     public void recogerVida(){
-        
+        if (tab.vecLo[tab.personaje.pospery][tab.personaje.pospery]== 7) {
+            
+            
+        }
     }
 }

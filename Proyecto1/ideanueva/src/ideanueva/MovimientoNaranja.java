@@ -327,7 +327,7 @@ public class MovimientoNaranja extends Thread {
                                 tablero.vecG[tablero.mago1.posMagoX][tablero.mago1.posMagoY].setIcon(null);
                                 tablero.repintar();
                                 tablero.mago1.posMagoX -= 1;
-                                tablero.vecLo[tablero.mago1.posMagoX][tablero.mago1.posMagoY] = 1;
+                                tablero.vecLo[tablero.mago1.posMagoX][tablero.mago1.posMagoY] = 2;
                                 tablero.repintar();
                                 cantidad--;
                                 Thread.sleep(500);

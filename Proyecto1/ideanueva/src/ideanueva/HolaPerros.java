@@ -18,12 +18,16 @@ public class HolaPerros extends JFrame {
     Thread time = new Thread();
     
     public void run(){
-        try {
-            int segs=120;
-            tiempo.setText(""+segs--    );
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(HolaPerros.class.getName()).log(Level.SEVERE, null, ex);
+        for (;; ) {
+            
+        
+            try {
+                int segs=120;
+                tiempo.setText(""+segs--    );
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HolaPerros.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     /**
