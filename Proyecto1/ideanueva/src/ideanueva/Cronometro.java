@@ -33,5 +33,8 @@ public class Cronometro extends Thread{
             }
         }
     }
+    public void run(){
+        disminuir(label);
+    }
     
 }
