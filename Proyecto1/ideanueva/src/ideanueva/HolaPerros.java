@@ -6,6 +6,8 @@
 package ideanueva;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -13,18 +15,29 @@ import javax.swing.*;
  * @author Ludwing_98
  */
 public class HolaPerros extends JFrame {
-
+    Thread time = new Thread();
+    
+    public void run(){
+        try {
+            int segs=120;
+            tiempo.setText(""+segs--    );
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(HolaPerros.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * Creates new form HolaPerros
      */
     public HolaPerros() {
         initComponents();
+        time.start();
     }
     public Tablero tab;
     public boolean tabcreado= false;
     public int numero;
     Random rand = new Random(System.nanoTime());
-    public int per=4;
+    public int per;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,9 +48,8 @@ public class HolaPerros extends JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        tiempo = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -51,19 +63,12 @@ public class HolaPerros extends JFrame {
 
         jLabel1.setText("Tamaño");
 
-        jLabel2.setText("Movimiento");
+        tiempo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jTextField1.setName("tam"); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.setName("mov"); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
             }
         });
 
@@ -134,12 +139,10 @@ public class HolaPerros extends JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
+                .addGap(123, 123, 123)
+                .addComponent(tiempo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
@@ -170,9 +173,8 @@ public class HolaPerros extends JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2)
+                            .addComponent(tiempo)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))
                         .addGap(27, 27, 27)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -214,19 +216,17 @@ public class HolaPerros extends JFrame {
             return;
         }
         numero=1;
+        per= rand.nextInt(7);
         MovimientoNaranja movi= new MovimientoNaranja(Integer.parseInt(jLabel3.getText().trim()),tab,numero,per);
         movi.start();
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if (!tabcreado) {
             System.out.println("Tablero no creado");
             return;
         }
+        per= rand.nextInt(7);
         numero=2;
         MovimientoNaranja movi = new MovimientoNaranja(Integer.parseInt(jLabel3.getText().trim()),tab,numero,per);
         movi.start();
@@ -237,6 +237,7 @@ public class HolaPerros extends JFrame {
             System.out.println("Tablero no creado");
             return;
         }
+        per= rand.nextInt(7);
         numero=3;
         MovimientoNaranja movi = new MovimientoNaranja(Integer.parseInt(jLabel3.getText().trim()),tab,numero,per);
         movi.start();
@@ -247,6 +248,7 @@ public class HolaPerros extends JFrame {
             System.out.println("Tablero no creado");
             return;
         }
+        per= rand.nextInt(7);
         numero=4;
         MovimientoNaranja movi = new MovimientoNaranja(Integer.parseInt(jLabel3.getText().trim()),tab,numero,per);
         movi.start();
@@ -301,10 +303,9 @@ public class HolaPerros extends JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel tiempo;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 public class Mago1 {
     public int posMagoX;
     public int posMagoY;
-    public int cantidad=0;
+    public int fuerza=1;
     public Tablero tablero=null;
     public ImageIcon obtenerImagen(int tamuy,int tamux){
         ImageIcon per= new ImageIcon(getClass().getResource("/imagenes/mago.png"));
@@ -23,5 +23,8 @@ public class Mago1 {
         Image tamImagen = imagen.getScaledInstance(tamux, tamuy, Image.SCALE_SMOOTH);
         per = new ImageIcon(tamImagen);
         return per;
+    }
+    public void atacar(){
+        
     }
 }

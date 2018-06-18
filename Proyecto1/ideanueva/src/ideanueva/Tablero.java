@@ -24,13 +24,9 @@ public class Tablero {
     public int tambloquey;
     public int tambloquex;
     public int a,b,c,d,e,f,g,h,k,l,m,n;
-    public ImageIcon obtenerImagen(){
-        ImageIcon per= new ImageIcon(getClass().getResource("/imagenes/fondo.jpg"));
-        Image imagen = per.getImage();
-        Image tamImagen = imagen.getScaledInstance(510, 510, Image.SCALE_SMOOTH);
-        per = new ImageIcon(tamImagen);
-        return per;
-    }
+    public int vidas;
+    
+    
     public Random ale = new Random(System.nanoTime());
     public Tablero(int tam, JPanel panel){
         this.tam=tam;
@@ -55,6 +51,7 @@ public class Tablero {
         l = ale.nextInt(tam);
         m= ale.nextInt(tam);
         n= ale.nextInt(tam);
+        vidas=(int)(tam*0.05);
         vecLo[a][b]=1;
         personaje= new Barbaro1();
         personaje.pospery=a;
@@ -91,7 +88,6 @@ public class Tablero {
     }
     public void repintar(){
         JLabel casilla = null;
-        obtenerImagen();
         for (int i = 0; i < tam; i++) {
             //0 casilla vacia
             for (int j = 0; j < 10; j++) {

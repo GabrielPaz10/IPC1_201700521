@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
  * @author Ludwing_98
  */
 public class Barbaro1 {
+    public int fuerza=2;
     public int pospery=0,posperx=0;
     public ImageIcon obtenerImagen(int tamuy,int tamux){
         ImageIcon per= new ImageIcon(getClass().getResource("/imagenes/barbaro.png"));
@@ -21,5 +22,11 @@ public class Barbaro1 {
         per = new ImageIcon(tamImagen);
         return per;
     }
+    public void atacar(){
+        
+    }
     
+    public void recogerVida(){
+        
+    }
 }

@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 public class Princesa1 extends Thread{
     public int posX;
     public int posY;
-    public int cantidad=0;
+    public int fuerza=1;
     public Tablero tablero=null;
     public ImageIcon obtenerImagen(int tamuy,int tamux){
         ImageIcon per= new ImageIcon(getClass().getResource("/imagenes/descarga.jpg"));
@@ -23,5 +23,8 @@ public class Princesa1 extends Thread{
         Image tamImagen = imagen.getScaledInstance(tamux, tamuy, Image.SCALE_SMOOTH);
         per = new ImageIcon(tamImagen);
         return per;
+    }
+    public void atacar(){
+        
     }
 }
