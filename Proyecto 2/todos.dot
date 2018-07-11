@@ -1,0 +1,12 @@
+digraph todos {
+subgraph cluster_0 {
+label = "Aviones";
+
+
+}
+subgraph cluster_1 {
+label = "Pasajeros";
+
+
+}
+}
